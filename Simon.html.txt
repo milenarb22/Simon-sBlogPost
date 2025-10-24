@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="description" content="Blog de Simón — historias y momentos de un gato Sagrado de Birmania." />
     <title>Blog de Simón</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <!-- Enlazar al CSS alojado en GitHub Pages: ajusta el nombre del archivo si es distinto -->
+    <link rel="stylesheet" href="https://milenarb22.github.io/Css/style.css" />
 </head>
 <body>
     <header class="site-header">
