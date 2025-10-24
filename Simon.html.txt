@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Blog de Simón</title>
-    <!-- Hoja de estilos añadida -->
-    <link rel="stylesheet" href="https://milenarb22.github.io/Css/style.css">
+    <!-- Hoja de estilos añadida (ruta relativa para GitHub Pages) -->
+    <link rel="stylesheet" href="./Css/style.css">
 </head>
 <body>
     <!-- Menú de navegación -->
