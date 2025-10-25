@@ -2,109 +2,310 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Blog de Simón</title>
+
+    <!-- Estilos gatunos embebidos -->
+    <style>
+    /* Diseño gatuno embebido */
+    :root{
+      --bg-1: #FFF8FB;
+      --bg-2: #FFF1F6;
+      --card: #ffffff;
+      --accent: #ff9bb3;
+      --accent-2: #7fe3c3;
+      --text: #2b2b2b;
+      --muted: #6b6b6b;
+      --shadow: 0 8px 20px rgba(43,43,43,0.08);
+      --radius: 14px;
+    }
+
+    body{
+      margin:0;
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color:var(--text);
+      background:
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><circle cx='18' cy='18' r='5' fill='%23000' fill-opacity='0.05'/><circle cx='30' cy='10' r='4.5' fill='%23000' fill-opacity='0.05'/><circle cx='46' cy='18' r='5' fill='%23000' fill-opacity='0.05'/><circle cx='28' cy='26' r='4.2' fill='%23000' fill-opacity='0.05'/><ellipse cx='32' cy='38' rx='12' ry='8' fill='%23000' fill-opacity='0.05'/></svg>") repeat,
+        linear-gradient(120deg, var(--bg-1), var(--bg-2));
+      background-blend-mode: overlay;
+      background-attachment: fixed;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding: 36px 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container{
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 8px 18px 60px;
+      width:100%;
+    }
+
+    nav{
+      display:flex;
+      justify-content: flex-end;
+      gap:12px;
+      margin-bottom: 18px;
+    }
+    nav a{
+      background: linear-gradient(90deg, rgba(255,255,255,0.6), rgba(255,255,255,0.2));
+      color:var(--text);
+      padding:8px 14px;
+      border-radius: 999px;
+      text-decoration:none;
+      font-weight:600;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+      transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+    }
+    nav a:hover{
+      transform: translateY(-3px);
+      box-shadow: 0 10px 22px rgba(0,0,0,0.08);
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      color: #fff;
+    }
+
+    h1{
+      font-size: 2.6rem;
+      margin: 6px 0 6px;
+      letter-spacing: -0.02em;
+      display: inline-flex;
+      align-items: center;
+      gap:12px;
+    }
+    h1::before{
+      content: "🐾";
+      font-size: 1.6rem;
+      transform: translateY(2px);
+    }
+    h2{
+      color: var(--muted);
+      margin-top: 6px;
+      font-weight: 600;
+    }
+
+    article{
+      background: linear-gradient(180deg, rgba(255,255,255,0.9), var(--card));
+      border-radius: var(--radius);
+      padding: 18px;
+      margin: 18px 0;
+      box-shadow: var(--shadow);
+      transition: transform .2s cubic-bezier(.2,.9,.3,1), box-shadow .2s;
+      position: relative;
+      overflow: visible;
+      border: 1px solid rgba(120,120,120,0.04);
+    }
+
+    article::before{
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 8px;
+      background: linear-gradient(180deg, var(--accent), var(--accent-2));
+      border-top-left-radius: var(--radius);
+      border-bottom-left-radius: var(--radius);
+    }
+    article::after{
+      content: "😺";
+      position: absolute;
+      left: 10px;
+      top: -16px;
+      font-size: 22px;
+      filter: drop-shadow(0 6px 10px rgba(0,0,0,0.08));
+    }
+
+    article:hover{
+      transform: translateY(-6px) scale(1.005);
+      box-shadow: 0 18px 40px rgba(43,43,43,0.12);
+    }
+
+    article h3{
+      margin-top: 0;
+      margin-bottom: 6px;
+      font-size: 1.4rem;
+    }
+    article p{
+      line-height: 1.55;
+      margin: 6px 0;
+    }
+
+    .meta{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+      color:var(--muted);
+      font-size:0.95rem;
+    }
+
+    article img{
+      display:block;
+      margin: 12px 0;
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.06);
+      border: 6px solid rgba(255,255,255,0.6);
+    }
+
+    article:first-of-type img{
+      width: 100%;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+      transform: rotate(-1.6deg);
+      border-radius: 18px;
+    }
+
+    small{
+      display:inline-block;
+      color:var(--muted);
+      font-size:0.85rem;
+    }
+
+    @media (min-width: 720px){
+      article h3{
+        display:inline-block;
+        vertical-align:middle;
+      }
+      .meta{
+        margin-left: 8px;
+      }
+    }
+
+    .signature{
+      margin-top: 28px;
+      text-align:center;
+      color:var(--muted);
+      font-size:0.95rem;
+    }
+
+    a:focus, button:focus {
+      outline: 3px solid rgba(127,227,195,0.38);
+      outline-offset: 2px;
+    }
+
+    article img:hover{
+      transform: scale(1.01);
+      transition: transform .22s ease;
+    }
+
+    .sticker{
+      display:inline-block;
+      padding: 10px 14px;
+      background: linear-gradient(90deg, rgba(255,255,255,0.8), rgba(255,255,255,0.55));
+      border-radius: 999px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+      font-weight:700;
+      color:var(--text);
+    }
+    </style>
 </head>
 <body>
-    <!-- Menú de navegación -->
-    <nav>
-    <a href="https://milenarb22.github.io/AboutMe/">Sobre mí</a>
-</nav>
+    <div class="container">
+      <!-- Menú de navegación -->
+      <nav>
+        <a href="https://milenarb22.github.io/AboutMe/">Sobre mí</a>
+      </nav>
 
-    <!-- Sección de presentación -->
-    <h1>Blog de Simón</h1>
-    <h2>Info</h2>
-    <p>
-       Mi nombre es <strong>Simón</strong>. Soy un gato de raza <em>Sagrado de Birmania</em>. 
-       Vivo en un departamento con una familia de 4 personas y una tortuga. 
-       Me encanta maullar hasta conseguir lo que quiero, dormir y comer.  
-       Nací el <strong>30 de diciembre de 2011</strong>.  
-       Hoy voy a hacer un blog sobre mí mismo.
-    </p>
+      <!-- Sección de presentación -->
+      <h1>Blog de Simón</h1>
+      <h2>Info</h2>
+      <p>
+         Mi nombre es <strong>Simón</strong>. Soy un gato de raza <em>Sagrado de Birmania</em>. 
+         Vivo en un departamento con una familia de 4 personas y una tortuga. 
+         Me encanta maullar hasta conseguir lo que quiero, dormir y comer.  
+         Nací el <strong>30 de diciembre de 2011</strong>.  
+         Hoy voy a hacer un blog sobre mí mismo.
+      </p>
 
-    <!-- Sección de posts -->
-    <h2>Blog Posts</h2>
+      <!-- Sección de posts -->
+      <h2>Blog Posts</h2>
 
-    <!-- Primer post -->
-    <article>
-        <h3>Lorem, ipsum dolor</h3>
-        <p><strong>Autor:</strong> Simón Beltrán</p>
-        <p><strong>Fecha:</strong> 30/12/2024</p>
-        <img
-            src="https://drive.google.com/uc?export=view&id=1JO3gu1w0PDVcLGc7b_GCZUPLamtktZ20"
-            alt="Cumpleaños de Simón"
-            width="400"
-        >
-        <p>
-            Hoy cumplo 13 años y mi familia me regaló una cucha nueva y varios sobres del alimento húmedo que tanto me gusta. 
-            A la tarde tomé sol en el patio y me dormí una siesta. Me sacaron muchas fotos. 
-            Me encanta cumplir un día antes de que se termine el año, porque significa que estoy 3 días seguidos de fiesta.
-        </p>
-    </article>
+      <!-- Primer post -->
+      <article>
+          <h3>Lorem, ipsum dolor</h3>
+          <p class="meta"><strong>Autor:</strong> Simón Beltrán <small>·</small> <strong>Fecha:</strong> 30/12/2024</p>
+          <img
+              src="https://drive.google.com/uc?export=view&id=1JO3gu1w0PDVcLGc7b_GCZUPLamtktZ20"
+              alt="Cumpleaños de Simón"
+              width="400"
+          >
+          <p>
+              Hoy cumplo 13 años y mi familia me regaló una cucha nueva y varios sobres del alimento húmedo que tanto me gusta. 
+              A la tarde tomé sol en el patio y me dormí una siesta. Me sacaron muchas fotos. 
+              Me encanta cumplir un día antes de que se termine el año, porque significa que estoy 3 días seguidos de fiesta.
+          </p>
+      </article>
 
-    <!-- Segundo post -->
-    <article>
-        <h3>Voluptates, sit illo</h3>
-        <p><strong>Autor:</strong> Simón Beltrán</p>
-        <p><strong>Fecha:</strong> 05/01/2025</p>
-        <img
-            src="https://via.placeholder.com/400"
-            alt="Cucha de Simón"
-            width="400"
-        >
-        <p>
-            Hoy estrené mi nueva cucha. Es muy cómoda y calentita. Creo que voy a pasar muchas siestas ahí.  
-            También probé un nuevo sabor de alimento húmedo, ¡me encantó!
-        </p>
-    </article>
+      <!-- Segundo post -->
+      <article>
+          <h3>Voluptates, sit illo</h3>
+          <p class="meta"><strong>Autor:</strong> Simón Beltrán <small>·</small> <strong>Fecha:</strong> 05/01/2025</p>
+          <img
+              src="https://via.placeholder.com/400"
+              alt="Cucha de Simón"
+              width="400"
+          >
+          <p>
+              Hoy estrené mi nueva cucha. Es muy cómoda y calentita. Creo que voy a pasar muchas siestas ahí.  
+              También probé un nuevo sabor de alimento húmedo, ¡me encantó!
+          </p>
+      </article>
 
-    <!-- Tercer post -->
-    <article>
-        <h3>Un día de sol</h3>
-        <p><strong>Autor:</strong> Simón Beltrán</p>
-        <p><strong>Fecha:</strong> 12/01/2025</p>
-        <img
-            src="https://via.placeholder.com/400"
-            alt="Simón tomando sol"
-            width="400"
-        >
-        <p>
-            Hoy pasé toda la tarde en el patio tomando sol. Me encanta acostarme panza arriba y estirarme.  
-            Después me dormí una siesta de 3 horas. ¡La vida gatuna es perfecta!
-        </p>
-    </article>
+      <!-- Tercer post -->
+      <article>
+          <h3>Un día de sol</h3>
+          <p class="meta"><strong>Autor:</strong> Simón Beltrán <small>·</small> <strong>Fecha:</strong> 12/01/2025</p>
+          <img
+              src="https://via.placeholder.com/400"
+              alt="Simón tomando sol"
+              width="400"
+          >
+          <p>
+              Hoy pasé toda la tarde en el patio tomando sol. Me encanta acostarme panza arriba y estirarme.  
+              Después me dormí una siesta de 3 horas. ¡La vida gatuna es perfecta!
+          </p>
+      </article>
 
-    <!-- Cuarto post -->
-    <article>
-        <h3>Visita inesperada</h3>
-        <p><strong>Autor:</strong> Simón Beltrán</p>
-        <p><strong>Fecha:</strong> 20/01/2025</p>
-        <img
-            src="https://via.placeholder.com/400"
-            alt="Simón con visita"
-            width="400"
-        >
-        <p>
-            Hoy vinieron unos amigos de mi familia y me dieron muchas caricias.  
-            Al principio me escondí debajo de la cama, pero después me animé y me porté como un verdadero anfitrión.  
-            Terminé la tarde durmiendo en el sillón mientras todos me miraban.
-        </p>
-    </article>
+      <!-- Cuarto post -->
+      <article>
+          <h3>Visita inesperada</h3>
+          <p class="meta"><strong>Autor:</strong> Simón Beltrán <small>·</small> <strong>Fecha:</strong> 20/01/2025</p>
+          <img
+              src="https://via.placeholder.com/400"
+              alt="Simón con visita"
+              width="400"
+          >
+          <p>
+              Hoy vinieron unos amigos de mi familia y me dieron muchas caricias.  
+              Al principio me escondí debajo de la cama, pero después me animé y me porté como un verdadero anfitrión.  
+              Terminé la tarde durmiendo en el sillón mientras todos me miraban.
+          </p>
+      </article>
 
-    <!-- Quinto post -->
-    <article>
-        <h3>Nuevo juguete</h3>
-        <p><strong>Autor:</strong> Simón Beltrán</p>
-        <p><strong>Fecha:</strong> 28/01/2025</p>
-        <img
-            src="https://via.placeholder.com/400"
-            alt="Juguete de Simón"
-            width="400"
-        >
-        <p>
-            Hoy me regalaron un ratón de juguete que hace ruido.  
-            Estuve corriendo por todo el departamento persiguiéndolo hasta que me cansé.  
-            Ahora es mi juguete favorito, aunque también me gusta jugar con las cajas de cartón.
-        </p>
-    </article>
+      <!-- Quinto post -->
+      <article>
+          <h3>Nuevo juguete</h3>
+          <p class="meta"><strong>Autor:</strong> Simón Beltrán <small>·</small> <strong>Fecha:</strong> 28/01/2025</p>
+          <img
+              src="https://via.placeholder.com/400"
+              alt="Juguete de Simón"
+              width="400"
+          >
+          <p>
+              Hoy me regalaron un ratón de juguete que hace ruido.  
+              Estuve corriendo por todo el departamento persiguiéndolo hasta que me cansé.  
+              Ahora es mi juguete favorito, aunque también me gusta jugar con las cajas de cartón.
+          </p>
+      </article>
+
+      <div class="signature">
+        <span class="sticker">Con cariño, Simón 🐾</span>
+      </div>
+    </div>
 </body>
 </html>
