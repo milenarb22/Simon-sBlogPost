@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="Blog de Simón — historias y momentos de un gato Sagrado de Birmania." />
+    <title>Blog de Simón</title>
+    <!-- Enlazar al CSS alojado en GitHub Pages: ajusta el nombre del archivo si es distinto -->
+    <link rel="stylesheet" href="https://milenarb22.github.io/Css/style.css" />
+</head>
+<body>
+    <header class="site-header">
+        <nav class="main-nav" aria-label="Navegación principal">
+            <ul>
+                <li><a href="https://milenarb22.github.io/AboutMe/" rel="noopener">Sobre mí</a></li>
+                <li><a href="#posts">Entradas</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <div class="hero">
+            <h1>Blog de Simón</h1>
+            <p class="lead">
+                ¡Hola! Soy <strong>Simón</strong>, un gato de raza <em>Sagrado de Birmania</em>.
+                Vivo con una familia de cuatro personas y una tortuga. Me encanta dormir, maullar cuando quiero algo y
+                descubrir nuevos escondites.
+            </p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="about" class="card" aria-labelledby="about-heading">
+            <h2 id="about-heading">Datos rápidos</h2>
+            <p>Nací el <strong>30 de diciembre de 2011</strong>. Aquí comparto mis aventuras y momentos favoritos.</p>
+        </section>
+
+        <section id="posts" aria-labelledby="posts-heading">
+            <h2 id="posts-heading">Entradas del blog</h2>
+
+            <article class="post card">
+                <header>
+                    <h3>Lorem, ipsum dolor</h3>
+                    <p class="meta"><strong>Autor:</strong> Simón Beltrán — <strong>Fecha:</strong>
+                        <time datetime="2024-12-30">30 de diciembre de 2024</time>
+                    </p>
+                </header>
+                <figure>
+                    <img
+                        src="https://drive.google.com/uc?export=view&id=1JO3gu1w0PDVcLGc7b_GCZUPLamtktZ20"
+                        alt="Simón en su cumpleaños con su nueva cucha"
+                        loading="lazy"
+                    />
+                    <figcaption>Cumpleaños: recibí una cucha nueva y sobres de mi comida favorita.</figcaption>
+                </figure>
+                <p>
+                    Hoy cumplí 13 años. Mi familia me regaló una cucha nueva y varios sobres del alimento húmedo que tanto me gusta.
+                    Tomé sol en el patio, me saqué fotos y tuve una siesta larga. Me encanta cumplir cerca del fin de año porque
+                    la casa está de fiesta varios días.
+                </p>
+            </article>
+
+            <article class="post card">
+                <header>
+                    <h3>Voluptates, sit illo</h3>
+                    <p class="meta"><strong>Autor:</strong> Simón Beltrán — <strong>Fecha:</strong>
+                        <time datetime="2025-01-05">5 de enero de 2025</time>
+                    </p>
+                </header>
+                <figure>
+                    <img
+                        src="https://via.placeholder.com/800x500"
+                        alt="La nueva cucha de Simón"
+                        loading="lazy"
+                    />
+                    <figcaption>Estrené mi nueva cucha: suave y calentita.</figcaption>
+                </figure>
+                <p>
+                    Estrené mi nueva cucha: es muy cómoda y calentita. Probé también un nuevo sabor de alimento húmedo y me encantó.
+                    Creo que voy a pasar muchas siestas ahí.
+                </p>
+            </article>
+
+            <article class="post card">
+                <header>
+                    <h3>Un día de sol</h3>
+                    <p class="meta"><strong>Autor:</strong> Simón Beltrán — <strong>Fecha:</strong>
+                        <time datetime="2025-01-12">12 de enero de 2025</time>
+                    </p>
+                </header>
+                <figure>
+                    <img
+                        src="https://via.placeholder.com/800x500"
+                        alt="Simón tomando sol en el patio"
+                        loading="lazy"
+                    />
+                    <figcaption>Siesta al sol: estirado panza arriba.</figcaption>
+                </figure>
+                <p>
+                    Pasé toda la tarde en el patio tomando sol. Me encanta estirarme panza arriba y dormitar. Terminé con una siesta de tres horas.
+                </p>
+            </article>
+
+            <article class="post card">
+                <header>
+                    <h3>Visita inesperada</h3>
+                    <p class="meta"><strong>Autor:</strong> Simón Beltrán — <strong>Fecha:</strong>
+                        <time datetime="2025-01-20">20 de enero de 2025</time>
+                    </p>
+                </header>
+                <figure>
+                    <img
+                        src="https://via.placeholder.com/800x500"
+                        alt="Simón recibiendo visitas y caricias"
+                        loading="lazy"
+                    />
+                    <figcaption>Al principio tímido, luego un perfecto anfitrión.</figcaption>
+                </figure>
+                <p>
+                    Vinieron unos amigos de la familia y me dieron muchas caricias. Al principio me escondí, pero después salí y fui muy amable.
+                    Terminé la tarde durmiendo en el sillón.
+                </p>
+            </article>
+
+            <article class="post card">
+                <header>
+                    <h3>Nuevo juguete</h3>
+                    <p class="meta"><strong>Autor:</strong> Simón Beltrán — <strong>Fecha:</strong>
+                        <time datetime="2025-01-28">28 de enero de 2025</time>
+                    </p>
+                </header>
+                <figure>
+                    <img
+                        src="https://via.placeholder.com/800x500"
+                        alt="Juguete de Simón (ratón de juguete)"
+                        loading="lazy"
+                    />
+                    <figcaption>Mi ratón de juguete ruidoso: ¡mi favorito!</figcaption>
+                </figure>
+                <p>
+                    Me regalaron un ratón que hace ruido. Corrí por todo el departamento persiguiéndolo hasta cansarme.
+                    Ahora es mi juguete favorito, aunque las cajas de cartón también siguen siendo irresistibles.
+                </p>
+            </article>
+        </section>
+
+        <section id="contact" class="card" aria-labelledby="contact-heading">
+            <h2 id="contact-heading">Contacto</h2>
+            <p>Si quieres saber más sobre mis aventuras, visita mi página "Sobre mí" o deja un mensaje en la página del autor.</p>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; <span id="year"></span> Simón Beltrán. Hecho con mucho ronroneo.</p>
+        <script>
+            // año actual automático
+            document.getElementById('year').textContent = new Date().getFullYear();
+        </script>
+    </footer>
+</body>
+</html>
